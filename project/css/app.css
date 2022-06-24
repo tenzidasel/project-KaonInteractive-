@@ -1,0 +1,135 @@
+html {
+	font-family: sans-serif;
+
+}
+body {
+	margin:0;
+	overflow:hidden;
+}
+
+.page {
+	position:absolute;	
+	top:0;
+	left:0;
+	width:100vw;
+	height:100vh;
+}
+
+.page {
+	transform:translate(100%);
+	transition:0.5s transform ease;	
+}
+.page[data-page="entry"] {
+	background: url(/screens/Entry.png) no-repeat; 
+	background-size: 100% 100%; /* contain, cover*/
+	transform:translate(-100%);	
+	text-align: right;
+}
+.page[data-page="gov1"] {
+	background: url(/assets/gov_bg.png) no-repeat center center fixed; 
+	background-size: 100% 100%;
+}
+.page[data-page="health"] {
+	background: url(/assets/hc_bg.png) no-repeat center center fixed; 
+	background-size: 100% 100%;
+}
+
+.page[data-page="gov2"] {
+	background: url(/assets/gov_bg.png) no-repeat center center fixed;
+	transform:translate(-100%);	 
+	background-size: 100% 100%;
+	
+}
+.page.active {
+	transform:translate(0);
+}
+
+.explore-button{
+	color:white;
+	background-color: grey;
+	padding:1rem;
+	display:inline-block;
+	margin:1rem;
+	overflow:hidden;
+	position:absolute;
+    bottom: 5%;
+	left:5%;
+	cursor: pointer; 
+}
+
+.right-button{
+	background: url(/assets/arrowR.png) no-repeat center center fixed;
+	background-color: grey;
+	padding:1.5rem;
+	color:white;
+	margin:1.5rem;
+	overflow:hidden;
+	position:absolute;
+    top: 5%;
+	right:5%;	
+	cursor: pointer; 
+}
+
+.button {
+	color:white;
+	padding:1rem;
+	display:inline-block;
+	margin:1rem;
+	position:relative;
+	overflow:hidden;
+ 
+}
+
+.option-button{
+	color:white;
+	background-color: grey;
+	padding:1rem;
+	display:inline-block;
+	margin:1rem;
+	overflow:hidden;
+	cursor: pointer; 
+	justify-content: center; 
+    
+}
+
+
+.vertical-center {
+	margin: 0;
+	position: absolute;
+	top: 50%;
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+  }
+
+.btn-group button {
+	background-color:gray;
+	color: white; /* White text */
+	padding: 1rem; /* Some padding */
+	cursor: pointer; /* Pointer/hand icon */
+	width: 20%; /* Set a width if needed */
+	display: block; /* Make the buttons appear below each other */
+	justify-content: center; 
+	border-bottom: none;
+  }
+
+/* Add a background color on hover */
+.btn-group button:hover {
+	background-color: lightgray;
+  }
+
+.button::after {
+	content:"";
+	position:absolute;
+	top:50%;
+	left:50%;
+	animation:pulse infinite ease 3s;
+	border-radius:50% 50%;
+	background:white;	
+	height:2rem;
+	width:2rem;
+}
+
+@keyframes pulse {
+	0% { transform:translate(-50%, -50%) scale(0); opacity:0.5;}
+	100% { transform:translate(-50%, -50%) scale(3); opacity:0;}
+}
