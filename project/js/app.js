@@ -5,5 +5,7 @@ $(document).ready(function(){
 		$(".page").removeClass("active");
 		$(".page[data-page='"+goal_page+"']").addClass("active");
 	})
-
 })
+
+
+    

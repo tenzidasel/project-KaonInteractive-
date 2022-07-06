@@ -7,13 +7,12 @@
 
 html {
 	font-family: JosefinSans;
-
 }
 body {
 	margin:0;
 	overflow:hidden;
+	font-family: JosefinSans;
 }
-
 
 .flex-contianer{
 	width: 100%;
@@ -22,6 +21,7 @@ body {
 	flex-direction: row;
 	justify-content: space-around;
 	opacity: 70%;
+
 }
 
 .midflex-box, .flex-box{
@@ -29,15 +29,21 @@ body {
 	height:200px;
 	font-size:25px;
 	text-align:center;
-	line-height:200px;
-	margin:10px;
+	line-height:70px;
+	margin: 20px;
+
 }
 
 .midflex-box{	
 	background:white;
-	opacity:70%;
 	color:grey;	
+	display: flex;
+	font-size:30px;
+	line-height:70px;
+	justify-content: center;
+	align-items: center;
 }
+
 
 .flex-box{	
 	color:white;	
@@ -62,15 +68,24 @@ body {
 	transition: 1s transform ease;
 }
 
+/**
 .page[data-page="gov1"] {
 	background: url(/assets/gov_bg.png) no-repeat center center fixed; 
 	background-size: 100% 100%;
-	transform:translate(100%);
-	
-}
+	transform:translate(-100%);
+	transition: 1s transform ease;
+		
+}*/
+
+.page[data-page="gov1"] {
+	background: url("../../assets/gov_bg.png") no-repeat center center fixed;
+	background-size: 100% 100%;
+	transform: translate(-100%);
+  } 
 .page[data-page="health"] {
 	background: url(/assets/hc_bg.png) no-repeat center center fixed; 
 	background-size: 100% 100%;
+	
 }
 
 .page[data-page="gov2"] {
@@ -92,6 +107,8 @@ body {
 	background:url(/assets/gov_bg.png) no-repeat center center fixed;
 	background-size: cover;
 	cursor: pointer; 
+	align-items: left;
+	justify-content: left;
 	
 }
 .rightside{
@@ -107,8 +124,8 @@ body {
 	margin:20px;
 	overflow:hidden;
 	position:absolute;
-    bottom: -30px;
-	left:-30px;
+    bottom: 30px;
+	left:-20px;
 	cursor: pointer; 
 }
 
@@ -125,14 +142,17 @@ body {
 	top: -30px;	
 }
 
+img{
+	float:right;
+   }
 .right-button{
-	background: url(/assets/arrowR.png) no-repeat center center fixed;
+	/*background: url(/assets/arrowR.png) no-repeat center center fixed;*/
 	background-color: grey;
-	right: -30px;	
+	right: 30px;	
 }
 
 .left-button{
-	background: url(/assets/arrowL.png) no-repeat center center fixed;	
+	/*background: url(/assets/arrowL.png) no-repeat center center fixed;	*/
 	background-color: grey;
 	left: -30px;	
 }
@@ -203,6 +223,37 @@ body {
 	background:white;	
 	height:2rem;
 	width:2rem;
+}
+
+.dot, .grey-dot, .yellow-dot, .g-dot{
+	height: 50px;
+  	width: 50px;
+    border-radius: 50%;
+ 
+	position:absolute;
+	display: flex;
+	
+}
+
+.dot {  
+  background-color: #bbb; 
+  left:550px;
+
+}
+
+.grey-dot {  
+  background-color: grey;  
+  left:580px;
+}
+
+.yellow-dot {  
+  background-color: yellow; 
+  left:610px;
+}
+
+.g-dot { 
+  background-color: grey;  
+  left:640px;
 }
 
 
