@@ -97,7 +97,7 @@ body {
 .midflex-box{	
 	background:white;
 	color:rgb(52, 50, 50);	
-	font-size:40px;
+	font-size:60px;
 	text-align: left;
 	flex-grow:2;
 	flex-direction: column;	
@@ -142,9 +142,7 @@ body {
 	margin-top: 80px;
 }
 
-img{
-	float:right;
-   }
+
 .right-button{
 	/*background: url(/assets/arrowR.png) no-repeat center center fixed;*/
 	background-color: grey;
