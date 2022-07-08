@@ -12,54 +12,22 @@ body {
 	margin:0;
 	overflow:hidden;
 	font-family: JosefinSans;
+	margin-left:auto;
+    margin-right:auto;
 }
-
-.flex-contianer{
-	width: 100%;
-	height:auto;
-	display: flex;
-	flex-direction: row;
-	justify-content: space-around;
-	opacity: 70%;
-
-}
-
-.midflex-box, .flex-box{
-	width:200px;
-	height:200px;
-	font-size:25px;
-	text-align:center;
-	line-height:70px;
-	margin: 20px;
-
-}
-
-.midflex-box{	
-	background:white;
-	color:grey;	
-	display: flex;
-	font-size:30px;
-	line-height:70px;
-	justify-content: center;
-	align-items: center;
-}
-
-
-.flex-box{	
-	color:white;	
-}
-
 
 .page {
 	position:absolute;	
 	top:0;
 	width:100vw;
 	height:100vh;
+	margin:auto;
 }
 
 .page {
 	transform:translate(100%);
-	transition: 1s transform ease;	
+	transition: 1s transform ease;
+	
 }
 .page[data-page="entry"] {
 	background-size: 100% 100%; /* contain, cover*/
@@ -68,14 +36,6 @@ body {
 	transition: 1s transform ease;
 }
 
-/**
-.page[data-page="gov1"] {
-	background: url(/assets/gov_bg.png) no-repeat center center fixed; 
-	background-size: 100% 100%;
-	transform:translate(-100%);
-	transition: 1s transform ease;
-		
-}*/
 
 .page[data-page="gov1"] {
 	background: url("../../assets/gov_bg.png") no-repeat center center fixed;
@@ -85,6 +45,7 @@ body {
 .page[data-page="health"] {
 	background: url(/assets/hc_bg.png) no-repeat center center fixed; 
 	background-size: 100% 100%;
+	transform: translate(-100%);
 	
 }
 
@@ -117,11 +78,48 @@ body {
 	cursor: pointer; 
 }
 
+.flex-contianer{
+	width: 100%;
+	height:auto;
+	display: flex;
+	flex-direction: row;
+	justify-content:space-around;
+	opacity: 90%;
+	flex-wrap: wrap;	
+}
+
+.midflex-box, .flex-box{
+	width:200px;
+	height:200px;	
+	
+}
+
+.midflex-box{	
+	background:white;
+	color:rgb(52, 50, 50);	
+	font-size:40px;
+	text-align: left;
+	flex-grow:2;
+	flex-direction: column;	
+	margin-top: 50px;		
+}
+
+
+.flex-box{	
+	color:white;
+	font-size:40px;
+	flex-direction: column;	
+	flex-grow:2;
+}
+
+
+
 .explore-button{
 	color:white;
 	background-color: grey;
 	padding:20px;
 	margin:20px;
+	font-size: 45px;
 	overflow:hidden;
 	position:absolute;
     bottom: 30px;
@@ -132,6 +130,7 @@ body {
 
 /* Left and right arrow buttons */
 .right-button, .left-button{
+	
 	background-color: grey;
 	color:white;
 	margin:1.5rem;
@@ -140,6 +139,7 @@ body {
 	cursor: pointer; 
 	padding: 40px; /* Some padding */
 	top: -30px;	
+	margin-top: 80px;
 }
 
 img{
@@ -148,13 +148,14 @@ img{
 .right-button{
 	/*background: url(/assets/arrowR.png) no-repeat center center fixed;*/
 	background-color: grey;
-	right: 30px;	
+	right: -25px;
+
 }
 
 .left-button{
 	/*background: url(/assets/arrowL.png) no-repeat center center fixed;	*/
 	background-color: grey;
-	left: -30px;	
+	left: -25px;	
 }
 
 .button {
@@ -169,17 +170,6 @@ img{
 	height:200px;
 	font-size:25px;	
 	line-height:60px;
-}
-
-.option-button{
-	color:white;
-	background-color: grey;
-	padding:1rem;
-	display:inline-block;
-	margin:1rem;
-	overflow:hidden;
-	cursor: pointer; 
-	justify-content: center;     
 }
 
 
@@ -199,6 +189,8 @@ img{
 	padding: 20px; /* Some padding */
 	cursor: pointer; /* Pointer/hand icon */
 	text-align: center;
+	display: flex;
+	justify-content: center;
 	position: fixed;
     top: 50%;
     left: 50%;
@@ -223,37 +215,6 @@ img{
 	background:white;	
 	height:2rem;
 	width:2rem;
-}
-
-.dot, .grey-dot, .yellow-dot, .g-dot{
-	height: 50px;
-  	width: 50px;
-    border-radius: 50%;
- 
-	position:absolute;
-	display: flex;
-	
-}
-
-.dot {  
-  background-color: #bbb; 
-  left:550px;
-
-}
-
-.grey-dot {  
-  background-color: grey;  
-  left:580px;
-}
-
-.yellow-dot {  
-  background-color: yellow; 
-  left:610px;
-}
-
-.g-dot { 
-  background-color: grey;  
-  left:640px;
 }
 
 
@@ -283,7 +244,7 @@ img{
   }
 
  .optB{
-	position: absolute;
+	position: fixed;
 	top: 180px;
 	right:250px;
   }
