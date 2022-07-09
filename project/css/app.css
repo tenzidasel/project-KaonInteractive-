@@ -1,13 +1,13 @@
+/*import custom font from folder using a .ttf text file*/
 @font-face {
 	font-family: JosefinSans;
 	src: url(/assets/JosefinSans-Regular.ttf);
-	font-style: normal;
-	font-weight: normal;
   }
 
 html {
 	font-family: JosefinSans;
 }
+
 body {
 	margin:0;
 	overflow:hidden;
@@ -29,6 +29,9 @@ body {
 	transition: 1s transform ease;
 	
 }
+
+/*Render each page that is assigned to data-page*/
+
 .page[data-page="entry"] {
 	background-size: 100% 100%; /* contain, cover*/
 	transform:translate(-100%);	
@@ -36,17 +39,16 @@ body {
 	transition: 1s transform ease;
 }
 
-
 .page[data-page="gov1"] {
 	background: url("../../assets/gov_bg.png") no-repeat center center fixed;
 	background-size: 100% 100%;
 	transform: translate(-100%);
   } 
+  
 .page[data-page="health"] {
 	background: url(/assets/hc_bg.png) no-repeat center center fixed; 
 	background-size: 100% 100%;
 	transform: translate(-100%);
-	
 }
 
 .page[data-page="gov2"] {
@@ -58,6 +60,7 @@ body {
 	transform:translate(0);
 }
 
+/* Main Page */
 .leftside, .rightside{
 	height:100vh;
 	width:100%;	
@@ -65,17 +68,14 @@ body {
 }
 
 .leftside{
-	background:url(/assets/gov_bg.png) no-repeat center center fixed;
+	background:url(/assets/gov_bg.png) ;
 	background-size: cover;
-	cursor: pointer; 
-	align-items: left;
-	justify-content: left;
-	
+	background-position-x: 50%;
 }
 .rightside{
-	background:url(/assets/hc_bg.png)no-repeat center center fixed;
+	background:url(/assets/hc_bg.png);
 	background-size: cover;
-	cursor: pointer; 
+	background-position-x: 50%;
 }
 
 .flex-contianer{
@@ -90,9 +90,9 @@ body {
 
 .midflex-box, .flex-box{
 	width:200px;
-	height:200px;	
-	
+	height:200px;		
 }
+
 
 .midflex-box{	
 	background:white;
@@ -112,8 +112,6 @@ body {
 	flex-grow:2;
 }
 
-
-
 .explore-button{
 	color:white;
 	background-color: grey;
@@ -129,8 +127,7 @@ body {
 
 
 /* Left and right arrow buttons */
-.right-button, .left-button{
-	
+.right-button, .left-button{	
 	background-color: grey;
 	color:white;
 	margin:1.5rem;
@@ -143,33 +140,15 @@ body {
 }
 
 
-.right-button{
-	/*background: url(/assets/arrowR.png) no-repeat center center fixed;*/
+.right-button{	
 	background-color: grey;
 	right: -25px;
-
 }
 
 .left-button{
-	/*background: url(/assets/arrowL.png) no-repeat center center fixed;	*/
 	background-color: grey;
 	left: -25px;	
 }
-
-.button {
-	background: grey;
-	color:white;
-	padding:1rem;
-	display:inline-block;
-	margin:10px;
-	position:relative;
-	overflow:hidden;
-	width:200px;
-	height:200px;
-	font-size:25px;	
-	line-height:60px;
-}
-
 
 .vertical-center {
 	margin: 0;
@@ -179,6 +158,9 @@ body {
 	transform: translateY(-50%);
   }
 
+  ul{
+	padding-inline-start: unset;
+}
 
 /* Gov 2 page options */
 .options {
@@ -194,14 +176,8 @@ body {
     left: 50%;
 	transform: translate(-50%, -50%);
 	font-size: 30px;
-  }
+}
 
-  
-
-/* Add a background color on hover */
-.btn-group button:hover {
-	background-color: lightgray;
-  }
 
  .button::after {
 	content:"";
@@ -216,7 +192,7 @@ body {
 }
 
 
-/* Health bubble options */
+/* Health bubble options- box creates the rectangle */
 .box {
 	width: 300px;
 	margin: 50px auto;
@@ -226,8 +202,9 @@ body {
 	font-weight: 900;
 	color: #fff;
 	position:relative;
-  }
-
+}
+/* Transform the rectangle button to a bubble with transparent edges and 
+fill in solid color to make the shape of a text bubble*/
 .sb3:before {
 	content: "";
 	width: 0px;
@@ -239,22 +216,49 @@ body {
 	border-bottom: 10px solid transparent;
 	left: 150px;
 	bottom: -19px;
-  }
+}
 
- .optB{
+/* For maximum and minimum screen sizing for health page */
+@media (max-width: 950px) {
+	.optA {
+		top: 27%;
+		left: 17%;
+	}
+	
+	.optB {
+		top: 40% ;
+		right: 25%;
+		}
+}
+	
+@media (min-width: 950px) {
+	.optB{
 	position: fixed;
-	top: 180px;
-	right:250px;
-  }
-  
-  .optA{
+	top: 30%;
+	right: 30%;
+	}
+	
+	.optA{
 	position: absolute;;
-	top: 130px;
-	left:150px;
-  }
-
-
-
+	top: 20%;
+	left: 25%;
+	}
+}
+	
+/* For maximum and minimum screen sizing for main page */
+@media (max-width: 1151px) {
+	.right-button, .left-button {
+	padding: 20px;
+	}
+	
+	circle {
+	r: 30;
+	}
+	
+	.midflex-box {
+	font-size: 50px;
+	}
+	}
 @keyframes pulse {
 	0% { transform:translate(-50%, -50%) scale(0); opacity:0.5;}
 	100% { transform:translate(-50%, -50%) scale(3); opacity:0;}
