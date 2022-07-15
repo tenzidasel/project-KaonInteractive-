@@ -112,18 +112,7 @@ body {
 	flex-grow:2;
 }
 
-.explore-button{
-	color:white;
-	background-color: grey;
-	padding:20px;
-	margin:20px;
-	font-size: 45px;
-	overflow:hidden;
-	position:absolute;
-    bottom: 30px;
-	left:-20px;
-	cursor: pointer; 
-}
+
 
 
 /* Left and right arrow buttons */
@@ -162,21 +151,7 @@ body {
 	padding-inline-start: unset;
 }
 
-/* Gov 2 page options */
-.options {
-	background-color:gray;
-	color: white; /* White text */
-	padding: 20px; /* Some padding */
-	cursor: pointer; /* Pointer/hand icon */
-	text-align: center;
-	display: flex;
-	justify-content: center;
-	position: fixed;
-    top: 50%;
-    left: 50%;
-	transform: translate(-50%, -50%);
-	font-size: 30px;
-}
+
 
 
  .button::after {
@@ -189,6 +164,12 @@ body {
 	background:white;	
 	height:2rem;
 	width:2rem;
+}
+
+.options{
+	opacity:0;
+	transition: opacity 1s;
+	animation: fade-In 3s forwards;
 }
 
 
@@ -244,6 +225,10 @@ fill in solid color to make the shape of a text bubble*/
 	left: 25%;
 	}
 }
+/*
+.options{
+	animation: fadeIn 0.7s;
+}*/
 	
 /* For maximum and minimum screen sizing for main page */
 @media (max-width: 1151px) {
@@ -263,4 +248,53 @@ fill in solid color to make the shape of a text bubble*/
 	0% { transform:translate(-50%, -50%) scale(0); opacity:0.5;}
 	100% { transform:translate(-50%, -50%) scale(3); opacity:0;}
 }
+
+
+
+
+.exploreButton{
+	color:white;
+	background-color: grey;
+	padding:20px;
+	margin:20px;
+	font-size: 45px;
+	overflow:hidden;
+	position:absolute;
+    bottom: 30px;
+	left:-20px;
+	cursor: pointer; 
+}
+
+
+.options{
+    width:200px;
+	height: 300px;
+	opacity:0;
+	background-color:gray;
+	color: white; /* White text */
+	padding: 20px; /* Some padding */
+	cursor: pointer; /* Pointer/hand icon */
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	position: fixed;
+	transform: translate(-50%, -50%);
+	font-size: 30px;
+	top: 50%;
+    left: 50%;
+	
+	
+  
+}
+
+.elementToFadeInAndOut {
+    animation: fadeInOut 1s linear forwards;
+}
+
+@keyframes fadeInOut{
+	0% { opacity:0; }
+	/**50% { opacity:1; } */
+	100% { opacity:1; } 
+}
+
 
