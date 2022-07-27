@@ -1,9 +1,215 @@
+:root {
+	
+	/*--bg-color: rgba(50, 48, 48, 0.5);/* grey opacity color on whole screen*/
+
+
+	--hover-width: 100%; /* take up 100% of the screen that was clicked*/
+	--other-width: 0%;
+	--speed: 1000ms;
+  }
+  
+  html, body {
+	padding:0;
+	margin:0;
+	font-family: JosefinSans;
+	
+	width: 100%;
+	height: 100%;
+	overflow-x: hidden;
+	background-color: grey;
+
+
+	overflow:hidden;
+	
+	margin-left:auto;
+    margin-right:auto;
+  }
+  
+  
+
+ /*
+  .button {
+	  background-color: grey;
+	  color: #fff;
+	  margin:1.5rem;
+	  overflow:hidden;
+	  position:absolute;
+	  cursor: pointer; 
+	  padding: 40px; /* Some padding 
+	  top: -30px;	
+	  margin-top: 80px;
+	 
+	  display: flex;
+	  flex-direction: row;
+	text-align: center;	
+	font-size: 1rem;
+	font-weight: bold;
+	transform: translateX(-50%);
+  }*/
+
+  /*
+  .-left-button:hover, .-right-button:hover{
+	transform: scale(1.05);
+	transition: transform 0.5s ease-in-out
+  }*/
+.-left-button, .-right-button{
+	background-color: grey;
+	color: #fff;
+	margin:1.5rem;
+	overflow:hidden;
+	position:absolute;
+	cursor: pointer; 
+	padding: 40px; /* Some padding */
+	top: -30px;	
+	margin-top: 80px;
+	opacity: 85%;
+	height: 200px;
+	width: 300px;
+  	text-align: center;	
+  	font-size: 30px;
+  	font-weight: bold; 
+	transform: translateX(-50%);
+	box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.5); /*change this*/
+}
+  .-left-button{	
+		left:100px;	
+  }
+
+  /*
+  .-left-button:hover{
+	transition: 1s transform ease-in-out;	
+	/*transform: scale(1.5);
+  }*/
+
+  .-right-button{	
+	right: -200px;
+  }
+
+  .middle{
+	background:white;	
+	font-size:40px;		
+	margin-top: 50px;
+	height: 200px;
+	width: 300px;	
+	opacity: 85%;	
+	z-index:1;
+  }
+  
+  .split.left .button:hover {
+	background-color: var(--left-button-hover-color);
+	border-color: var(--left-button-hover-color);
+  }
+  
+  .split.right .button:hover {
+	background-color: var(--right-button-hover-color);
+	border-color: var(--right-button-hover-color);
+  }
+  
+  .container {
+	width: 100%;
+	height: 100%;
+	background: var(--container-bg-color);
+	display: flex;
+	flex-direction: row;
+	justify-content:space-around;
+	opacity: 90%;
+		
+  }
+  
+  /* Home page screen split with grey background*/
+  .split {
+	position: absolute;
+	width: 49%;
+	height: 100%;
+	overflow: hidden;
+  }
+  
+  .split.left {
+	left:0;
+	background: url(/assets/gov_bg.png) center center no-repeat;
+	background-size: cover;
+  }
+  
+  
+  .split.left:before {
+	position:absolute;
+	content: "";
+	width: 100%;
+	height: 100%;
+	background: var(--bg-color);
+  }
+  
+  .split.right {
+	right:0;
+	background:url(/assets/hc_bg.png) center center no-repeat;
+	background-size: cover;
+  }
+  
+  .split.right:before {
+	position:absolute;
+	content: "";
+	width: 100%;
+	height: 100%;
+	background: var(--bg-color);
+  }
+  
+  /* transition for when u enter the*/
+  .split.left, .split.right, .split.right:before, .split.left:before {
+	transition: var(--speed) all ease-in-out;
+  }
+  
+  /*when left side is clicked, take up 100% of left screen and 0 of right*/
+  .hover-left .left {
+	width: var(--hover-width);
+  }
+  
+  .hover-left .right {
+	width: var(--other-width);
+  }
+  
+  .hover-left .right:before {
+	z-index: 2;
+  }
+  
+  /*when right side is clicked, take up 100% of right screen and 0 of left*/
+  .hover-right .right {
+	width: var(--hover-width);
+  }
+  
+  .hover-right .left {
+	width: var(--other-width);
+  }
+  
+  .hover-right .left:before {
+	z-index: 2;
+  }
+  
+  /*
+  @media(max-width: 800px) {
+	h1 {
+	  font-size: 2rem;
+	}
+  
+	.button {
+	  width: 12rem;
+	}
+  }
+  
+  @media(max-height: 700px) {
+	.button {
+	  top: 70%;
+	}
+  }
+*/
+
+  
 /*import custom font from folder using a .ttf text file*/
 @font-face {
 	font-family: JosefinSans;
 	src: url(/assets/JosefinSans-Regular.ttf);
   }
 
+  /*
 html {
 	font-family: JosefinSans;
 }
@@ -15,6 +221,7 @@ body {
 	margin-left:auto;
     margin-right:auto;
 }
+*/
 
 .page {
 	position:absolute;	
@@ -26,8 +233,7 @@ body {
 
 .page {
 	transform:translate(100%);
-	transition: 1s transform ease;
-	
+	transition: 1s transform ease-in-out;
 }
 
 /*Render each page that is assigned to data-page*/
@@ -40,27 +246,22 @@ body {
 }
 
 .page[data-page="gov1"] {
-	background: url("../../assets/gov_bg.png") no-repeat center center fixed;
+	/*background: url("../../assets/gov_bg.png") no-repeat center center fixed;*/
 	background-size: 100% 100%;
 	transform: translate(-100%);
   } 
   
 .page[data-page="health"] {
-	background: url(/assets/hc_bg.png) no-repeat center center fixed; 
+	/*background: url(/assets/hc_bg.png) no-repeat center center fixed; */
 	background-size: 100% 100%;
 	transform: translate(-100%);
 }
 
-.page[data-page="gov2"] {
-	background: url(/assets/gov_bg.png) no-repeat center center fixed; 	
-	transform:translate(-100%);	 
-	background-size: 100% 100%;	
-}
 .page.active {
 	transform:translate(0);
 }
 
-/* Main Page */
+/* Main Page 
 .leftside, .rightside{
 	height:100vh;
 	width:100%;	
@@ -110,35 +311,49 @@ body {
 	font-size:40px;
 	flex-direction: column;	
 	flex-grow:2;
-}
+}*/
 
 
 
 
-/* Left and right arrow buttons */
+/*Left and right arrow buttons */
 .right-button, .left-button{	
 	background-color: grey;
+	width:15%;
+	height:20%;
 	color:white;
 	margin:1.5rem;
 	overflow:hidden;
 	position:absolute;
 	cursor: pointer; 
-	padding: 40px; /* Some padding */
-	top: -30px;	
+	padding: 40px; 
+	right: 0;
 	margin-top: 80px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	box-shadow: 0px 0px 20px 7px rgba(0, 0, 0, 0.5);
+	transition: transform 0.5s ease-in-out;
+	
+	cursor: pointer;
 }
 
 
 .right-button{	
 	background-color: grey;
 	right: -25px;
+
+
 }
 
 .left-button{
 	background-color: grey;
-	left: -25px;	
+	left: -25px;
+	
 }
-
+.right-button:hover, .left-button:hover{
+	transform: scale(1.05);
+}
 .vertical-center {
 	margin: 0;
 	position: absolute;
@@ -149,9 +364,8 @@ body {
 
   ul{
 	padding-inline-start: unset;
+	
 }
-
-
 
 
  .button::after {
@@ -170,19 +384,22 @@ body {
 	opacity:0;
 	transition: opacity 1s;
 	animation: fade-In 3s forwards;
+	box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.5); /*change this*/
 }
 
 
 /* Health bubble options- box creates the rectangle */
-.box {
-	width: 300px;
+.boxs {
+	width: 150px;
 	margin: 50px auto;
-	background:grey;
+	background:rgb(50, 49, 49);
 	padding: 20px;
 	text-align: center;
-	font-weight: 900;
+	font-size: 30px;
 	color: #fff;
 	position:relative;
+	
+
 }
 /* Transform the rectangle button to a bubble with transparent edges and 
 fill in solid color to make the shape of a text bubble*/
@@ -193,10 +410,14 @@ fill in solid color to make the shape of a text bubble*/
 	position: absolute;
 	border-left: 10px solid transparent;	
 	border-right: 10px solid transparent;
-	border-top: 10px solid grey;
+	border-top: 10px solid rgb(50, 49, 49);
 	border-bottom: 10px solid transparent;
-	left: 150px;
+	left: 60px;
 	bottom: -19px;
+}
+
+.sb3:hover{
+	transform: translateY(-7.5%);
 }
 
 /* For maximum and minimum screen sizing for health page */
@@ -204,6 +425,7 @@ fill in solid color to make the shape of a text bubble*/
 	.optA {
 		top: 27%;
 		left: 17%;
+		
 	}
 	
 	.optB {
@@ -225,11 +447,8 @@ fill in solid color to make the shape of a text bubble*/
 	left: 25%;
 	}
 }
-/*
-.options{
-	animation: fadeIn 0.7s;
-}*/
-	
+
+
 /* For maximum and minimum screen sizing for main page */
 @media (max-width: 1151px) {
 	.right-button, .left-button {
@@ -251,6 +470,7 @@ fill in solid color to make the shape of a text bubble*/
 
 
 
+/* Gov Page */
 
 .exploreButton{
 	color:white;
@@ -263,6 +483,11 @@ fill in solid color to make the shape of a text bubble*/
     bottom: 30px;
 	left:-20px;
 	cursor: pointer; 
+	transition: opacity 0.25s ease-in;
+	
+}
+.exploreButton:hover{
+	transform: scale(1.05);
 }
 
 
@@ -281,10 +506,7 @@ fill in solid color to make the shape of a text bubble*/
 	transform: translate(-50%, -50%);
 	font-size: 30px;
 	top: 50%;
-    left: 50%;
-	
-	
-  
+    left: 50%;	
 }
 
 .elementToFadeInAndOut {
@@ -293,8 +515,7 @@ fill in solid color to make the shape of a text bubble*/
 
 @keyframes fadeInOut{
 	0% { opacity:0; }
-	/**50% { opacity:1; } */
+	/*50% { opacity:1; } */
 	100% { opacity:1; } 
 }
-
 
