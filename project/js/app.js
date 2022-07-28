@@ -12,7 +12,7 @@ $(document).ready(function(){ /* executed as soon as the document is ready for D
 	})
 })
 
-var pageId = 1;
+
 /* health Page options effects */
 var div = document.querySelector(".options");
 var btn = document.querySelector(".exploreButton");
@@ -27,63 +27,44 @@ const left = document.querySelector(".left");
 const right = document.querySelector(".right");
 const container = document.querySelector(".container");
 
+/* Left and right buttons inside gov and health page */
 const rightButtonGov = document.querySelector(".right-button");
 const leftButtonHealth = document.querySelector(".left-button");
+const exploreButton= document.querySelector(".exploreButton");
 
 
+/* Gov page */
 left.addEventListener("click", () => {
 container.classList.add("hover-left");
-pageId--;
-console.log(pageId)
   document.getElementById("governmentSection").style.display='none';
-  //document.querySelector("body > div.container > div.split.left > div").style.visibility = 'hidden'
-  
+  document.querySelector("#homePage > div.middle").style.visibility='hidden'
+  exploreButton.classList.add("elementToFadeInAndOut");
 });
 
 rightButtonGov.addEventListener("click",() =>{
 	document.querySelector("#governmentSection").style.display = 'block';
-
-	document.querySelector("#healthCareSection").style.display = 'block';
-	document.querySelector("#homePage > div.split.right").style.width = '49%';
-
-
+	document.querySelector("#homePage > div.middle").style.visibility='visible'
 	$(".page[data-page='gov1']").removeClass("active");
 	$(".page[data-page='entry']").addClass("active");
+	container.classList.remove("hover-left");
+});
 
+
+/* health page */
+leftButtonHealth.addEventListener("click",() =>{
+	document.querySelector("#governmentSection").style.display = 'block';
+	document.querySelector("#homePage > div.middle").style.visibility='visible'
+	document.querySelector("#healthCareSection").style.display = 'block';
+	
+	//$(".page[data-page='health']").removeClass("active");
+	//$(".page[data-page='entry']").addClass("active");
 	container.classList.remove("hover-right");
 });
 
 
-
-leftButtonHealth.addEventListener("click",() =>{
-
-	document.querySelector("#governmentSection").style.display = 'block';
-	document.querySelector("#healthCareSection").style.display = 'block';
-	document.querySelector("#homePage > div.split.left").style.width = '49%';
-	
-	$(".page[data-page='health']").removeClass("active");
-	$(".page[data-page='entry']").addClass("active");
-
-	container.classList.remove("hover-left");
-
-});
-
-/** 
-left.addEventListener("click", () => {
-  container.classList.add("container");
-});*/
-
-
-
-
 right.addEventListener("click", () => {
-  container.classList.add("hover-right");
-  pageId++;
-  console.log(pageId);
-  document.getElementById("governmentSection").style.display='none';
-  document.getElementById("healthCareSection").style.display='none';
+  	container.classList.add("hover-right"); 
+	document.getElementById("healthCareSection").style.display='none';
+ 	 document.querySelector("#homePage > div.middle").style.visibility='hidden'
 }); 
-/*
-right.addEventListener("click", () => {
-  container.classList.remove("hover-right");
-});*/
+
