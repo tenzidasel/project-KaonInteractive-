@@ -1,423 +1,403 @@
-:root {	
-	/*--bg-color: rgba(50, 48, 48, 0.5);/* grey opacity color on whole screen*/
-	--hover-width: 100%; /* take up 100% of the screen that was clicked*/
-	--other-width: 0%;
-	--speed: 1000ms;
-  }
+:root {
+  --hover-width: 100%; /* take up 100% of the screen that was clicked*/
+  --other-width: 0%;
+  --speed: 1000ms;
+}
 
 /*import custom font from folder using a .ttf text file*/
 @font-face {
-	font-family: JosefinSans;
-	src: url(/assets/JosefinSans-Regular.ttf);
-  }
-
-  html, body {
-	padding:0;
-	margin:0;
-	font-family: JosefinSans;	
-	background-color: grey;
-	overflow:hidden;
-  }
-  
-  
-.-left-button, .-right-button{
-	background-color: grey;
-	color: #fff;
-	margin:2rem;
-	overflow:hidden;
-	position:absolute;
-	cursor: pointer; 
-	padding: 40px; /* Some padding */
-	top: -30px;	
-	margin-top: 80px;
-	opacity: 90%;
-	height: 200px;
-	width: 250px;
-  	text-align: center;	
-  	font-size: 30px;
-  	font-weight: bold; 
-	transform: translateX(-50%);
-	box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.5); /*change this*/
+  font-family: JosefinSans;
+  src: url(/assets/JosefinSans-Regular.ttf);
 }
-  .-left-button{	
-		left:130px;	
-  }
 
-  .-right-button{	
-		right: -200px;
-  }
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: JosefinSans;
+  background-color: grey;
+  overflow: hidden;
+}
 
-  .middle{
-	background:white;	
-	font-size:40px;		
-	margin-top: 50px;
-	height: 200px;
-	width: 300px;	
-	opacity: 85%;	
-	z-index:1;
-  }
-  
-  .split.left .button:hover {
-	background-color: var(--left-button-hover-color);
-	border-color: var(--left-button-hover-color);
-  }
-  
-  .split.right .button:hover {
-	background-color: var(--right-button-hover-color);
-	border-color: var(--right-button-hover-color);
-  }
-  
-  .container {
-	width: 100%;
-	height: 100%;
-	background: var(--container-bg-color);
-	display: flex;
-	flex-direction: row;
-	justify-content:space-around;
-	opacity: 90%;
-		
-  }
-  
-  /* Home page screen split with grey background*/
-  .split {
-	position: absolute;
-	width: 49%;
-	height: 100%;
-	overflow: hidden;
-  }
-  
-  .split.left {
-	left:0;
-	background: url(/assets/gov_bg.png) center center no-repeat;
-	background-size: cover;
-  }
-  
-  
-  .split.left:before {
-	position:absolute;
-	content: "";
-	width: 100%;
-	height: 100%;
-	background: var(--bg-color);
-  }
-  
-  .split.right {
-	right:0;
-	background:url(/assets/hc_bg.png) center center no-repeat;
-	background-size: cover;
-  }
-  
-  .split.right:before {
-	position:absolute;
-	content: "";
-	width: 100%;
-	height: 100%;
-	background: var(--bg-color);
-  }
-  
-  /* transition for when u enter the*/
-  .split.left, .split.right, .split.right:before, .split.left:before {
-	transition: var(--speed) all ease-in-out;
-  }
-  
-  /*when left side is clicked, take up 100% of left screen and 0 of right*/
-  .hover-left .left {
-	width: var(--hover-width);
-  }
-  
-  .hover-left .right {
-	width: var(--other-width);
-  }
-  
-  .hover-left .right:before {
-	z-index: 2;
-  }
-  
-  /*when right side is clicked, take up 100% of right screen and 0 of left*/
-  .hover-right .right {
-	width: var(--hover-width);
+.-left-button,
+.-right-button {
+  background-color: grey;
+  color: #fff;
+  margin: 2rem;
+  overflow: hidden;
+  position: absolute;
+  cursor: pointer;
+  padding: 40px; /* Some padding */
+  top: -30px;
+  margin-top: 80px;
+  opacity: 90%;
+  height: 200px;
+  width: 250px;
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  transform: translateX(-50%);
+  box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.5); /*change this*/
+}
+.-left-button {
+  left: 130px;
+}
 
-  }
-  
-  .hover-right .left {
-	width: var(--other-width);
-  }
-  
-  .hover-right .left:before {
-	z-index: 2;
-  }
-  
+.-right-button {
+  right: -200px;
+}
 
-  
+.middle {
+  background: white;
+  font-size: 40px;
+  margin-top: 50px;
+  height: 200px;
+  width: 300px;
+  opacity: 85%;
+  z-index: 1;
+}
 
 
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
 
-.page {
-	position:absolute;	
-	top:0;
-	width:100vw;
-	height:100vh;
-	margin:auto;
+/* Home page screen split with grey background*/
+.split {
+  position: absolute;
+  width: 49%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.split.left {
+  left: 0;
+  background: url(/assets/gov_bg.png) center center no-repeat;
+  background-size: cover;
+}
+
+.split.left:before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  
+}
+
+.split.right {
+  right: 0;
+  background: url(/assets/hc_bg.png) center center no-repeat;
+  background-size: cover;
+}
+
+.split.right:before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+}
+
+/* transition for when u enter the*/
+.split.left,
+.split.right,
+.split.right:before,
+.split.left:before {
+  transition: var(--speed) all ease-in-out;
+}
+
+/*when left side is clicked, take up 100% of left screen and 0 of right*/
+.hover-left .left {
+  width: var(--hover-width);
+}
+
+.hover-left .right {
+  width: var(--other-width);
+}
+
+.hover-left .right:before {
+  z-index: 2;
+}
+
+/*when right side is clicked, take up 100% of right screen and 0 of left*/
+.hover-right .right {
+  width: var(--hover-width);
+}
+
+.hover-right .left {
+  width: var(--other-width);
+}
+
+.hover-right .left:before {
+  z-index: 2;
 }
 
 .page {
-	transform:translate(100%);
-	transition: 1s transform ease-in-out;
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  margin: auto;
+}
+
+.page {
+  transform: translate(100%);
+  transition: 1s transform ease-in-out;
 }
 
 /*Render each page that is assigned to data-page*/
 
 .page[data-page="entry"] {
-	background-size: 100% 100%; /* contain, cover*/
-	transform:translate(-100%);	
-	text-align: right;
-	transition: 1s transform ease;
+  background-size: 100% 100%; /* contain, cover*/
+  transform: translate(-100%);
+  text-align: right;
+  transition: 1s transform ease;
 }
 
 .page[data-page="gov1"] {
-	background-size: 100% 100%;
-	transform: translate(-100%);
-  } 
-  
+  background-size: 100% 100%;
+  transform: translate(-100%);
+}
+
 .page[data-page="health"] {
-	background-size: 100% 100%;
-	transform: translate(-100%);
+  background-size: 100% 100%;
+  transform: translate(-100%);
 }
 
 .page.active {
-	transform:translate(0);
+  transform: translate(0);
 }
-
 
 /*Left and right arrow buttons */
-.right-button, .left-button{	
-	background-color: grey;
-	width:15%;
-	height:20%;
-	color:white;
-	margin:1.5rem;
-	overflow:hidden;
-	position:absolute;
-	cursor: pointer; 
-	padding: 40px; 
-	right: 0;
-	margin-top: 80px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	box-shadow: 0px 0px 20px 7px rgba(0, 0, 0, 0.5);
-	
-	cursor: pointer;
-	transform: scale(1.05);
-	transition: opacity 0.25s 0s ease-in;
-	/*animation: fadeInOut 5s ease-in-out;*/
-	animation: 4s fadeIn;
-	animation-fill-mode: forwards;
-	visibility: hidden;
+.right-button,
+.left-button {
+  background-color: grey;
+  width: 15%;
+  height: 15%;
+  color: white;
+  margin: 1.5rem;
+  overflow: hidden;
+  position: absolute;
+  cursor: pointer;
+  padding: 40px;
+  right: 0;
+  margin-top: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 0px 20px 7px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  transform: scale(1.05);
+  transition: opacity 0.25s 0s ease-in;
+  animation: 4s fadeIn;
+  animation-fill-mode: forwards;
+  visibility: hidden;
 }
 
-
-.right-button{	
-	background-color: grey;
-	right: -25px;
-	transition: transform 0.5s ease-in-out;
+.right-button {
+  background-color: grey;
+  right: -25px;
+  transition: transform 0.5s ease-in-out;
 }
 
-.left-button{
-	background-color: grey;
-	left: -25px;
-	transition: transform 0.5s ease-in-out;
-	
+.left-button {
+  background-color: grey;
+  left: -25px;
+  transition: transform 0.5s ease-in-out;
 }
-.right-button:hover, .left-button:hover{
-	transform: scale(1.05);
-	transition: transform 0.5s ease-in-out;
+.right-button:hover,
+.left-button:hover {
+  transform: scale(1.05);
+  transition: transform 0.5s ease-in-out;
 }
 .vertical-center {
-	margin: 0;
-	position: absolute;
-	top: 50%;
-	-ms-transform: translateY(-50%);
-	transform: translateY(-50%);
-  }
-
-  ul{
-	padding-inline-start: unset;
-	
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
 }
 
-
- .button::after {
-	content:"";
-	position:absolute;
-	top:50%;
-	left:50%;
-	/*animation:pulse infinite ease 3s;*/
-	border-radius:50% 50%;
-	background:white;	
-	height:2rem;
-	width:2rem;
-	transition: transform 0.5s ease-in-out;
+ul {
+  padding-inline-start: unset;
 }
 
-.options{
-	opacity:0;
-	transition: opacity 1s;
-	animation: fade-In 3s forwards;
-	box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.5); /*change this*/
+.button::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  animation:pulse infinite ease 3s;
+  border-radius: 50% 50%;
+  background: white;
+  height: 2rem;
+  width: 2rem;
+  transition: transform 0.5s ease-in-out;
 }
 
+.options {
+  opacity: 0;
+  transition: opacity 1s;
+  animation: fade-In 3s forwards;
+  box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.5); /*change this*/
+}
 
 /* Health bubble options- box creates the rectangle */
 .boxs {
-	width: 150px;
-	margin: 50px auto;
-	background:rgb(50, 49, 49);
-	padding: 20px;
-	text-align: center;
-	font-size: 30px;
-	color: #fff;
-	position:relative;
-	animation: 4s fadeIn;
-	animation-fill-mode: forwards;
-	visibility: hidden;
-	
-	
-
+  width: 150px;
+  margin: 50px auto;
+  background: rgb(50, 49, 49);
+  padding: 20px;
+  text-align: center;
+  font-size: 30px;
+  color: #fff;
+  position: relative;
+  animation: 4s fadeIn;
+  animation-fill-mode: forwards;
+  visibility: hidden;
 }
 /* Transform the rectangle button to a bubble with transparent edges and 
 fill in solid color to make the shape of a text bubble*/
 .sb3:before {
-	content: "";
-	width: 0px;
-	height: 0px;
-	position: absolute;
-	border-left: 10px solid transparent;	
-	border-right: 10px solid transparent;
-	border-top: 10px solid rgb(50, 49, 49);
-	border-bottom: 10px solid transparent;
-	left: 60px;
-	bottom: -19px;
-	animation: 4s fadeIn;
-	animation-fill-mode: forwards;
-	visibility: hidden;
+  content: "";
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid rgb(50, 49, 49);
+  border-bottom: 10px solid transparent;
+  left: 60px;
+  bottom: -19px;
+  animation: 4s fadeIn;
+  animation-fill-mode: forwards;
+  visibility: hidden;
 }
 
-.sb3:hover{
-	transform: scale(1.05);
-	/*transform: translateY(-7.5%);*/
+.sb3:hover {
+  transform: scale(1.05);
 }
 
 /* For maximum and minimum screen sizing for health page */
 @media (max-width: 950px) {
-	.optA {
-		top: 27%;
-		left: 17%;		
-	}
-	
-	.optB {
-		top: 40% ;
-		right: 25%;
-		}
-}
-	
-@media (min-width: 950px) {
-	.optB{
-	position: fixed;
-	top: 30%;
-	right: 30%;
-	}
-	
-	.optA{
-	position: absolute;;
-	top: 20%;
-	left: 25%;
-	}
+  .optA {
+    top: 27%;
+    left: 17%;
+  }
+
+  .optB {
+    top: 40%;
+    right: 25%;
+  }
 }
 
+@media (min-width: 950px) {
+  .optB {
+    position: fixed;
+    top: 30%;
+    right: 30%;
+  }
+
+  .optA {
+    position: absolute;
+    top: 20%;
+    left: 25%;
+  }
+}
 
 /* For maximum and minimum screen sizing for main page */
 @media (max-width: 1151px) {
-	.right-button, .left-button {
-	padding: 20px;
-	}
-	
-	circle {
-	r: 30;
-	}
-	
-	.midflex-box {
-	font-size: 50px;
-	}
-	}
-	
-@keyframes pulse {
-	0% { transform:translate(-50%, -50%) scale(0); opacity:0.5;}
-	100% { transform:translate(-50%, -50%) scale(3); opacity:0;}
+  .right-button,
+  .left-button {
+    padding: 20px;
+  }
+
+  circle {
+    r: 30;
+  }
+
+  .midflex-box {
+    font-size: 50px;
+  }
 }
 
-
+/*
+@keyframes pulse {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(3);
+    opacity: 0;
+  }
+}*/
 
 /* Gov Page */
 
-.exploreButton{
-	color:white;
-	background-color: grey;
-	padding:20px;
-	margin:20px;
-	font-size: 45px;
-	overflow:hidden;
-	position:absolute;
-    bottom: 30px;
-	left:-20px;
-	cursor: pointer; 
-	animation: 3s fadeIn;
-	animation-fill-mode: forwards;
-	visibility: hidden;
+.exploreButton {
+  color: white;
+  background-color: grey;
+  padding: 20px;
+  margin: 20px;
+  font-size: 45px;
+  overflow: hidden;
+  position: absolute;
+  bottom: 30px;
+  left: -20px;
+  cursor: pointer;
+  animation: 3s fadeIn;
+  animation-fill-mode: forwards;
+  visibility: hidden;
 }
-.exploreButton:hover{
-	transform: scale(1.05);
-	
-}
-
-
-.options{
-    width:200px;
-	height: 300px;
-	opacity:0;
-	background-color:gray;
-	color: white; /* White text */
-	padding: 20px; /* Some padding */
-	cursor: pointer; /* Pointer/hand icon */
-	text-align: center;
-	display: flex;
-	justify-content: center;
-	position: fixed;
-	transform: translate(-50%, -50%);
-	font-size: 30px;
-	top: 50%;
-	left: 50%;	
-	/*transition: transform 0.5s ease-in-out;*/
-	/*animation:fadeIn 500mx forwards;*/
+.exploreButton:hover {
+  transform: scale(1.05);
 }
 
+.options {
+  width: 200px;
+  height: 300px;
+  opacity: 0;
+  background-color: gray;
+  color: white; /* White text */
+  padding: 20px; /* Some padding */
+  cursor: pointer; /* Pointer/hand icon */
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  font-size: 30px;
+  top: 50%;
+  left: 50%;
+  /*transition: transform 0.5s ease-in-out;*/
+  /*animation:fadeIn 500mx forwards;*/
+}
 
 .elementToFadeInAndOut {
-    animation: fadeIn 1s linear forwards;
+  animation: fadeIn 1s linear forwards;
 }
 
-@keyframes fadeIn{
-	0% { opacity:0; }
-	/*50% { opacity:1; } */
-	100% { 
-		visibility: visible;
-		opacity:1; 
-	} 
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  /*50% { opacity:1; } */
+  100% {
+    visibility: visible;
+    opacity: 1;
+  }
 }
 
-@keyframes fadeOut{
-	100% { opacity:0; }
+@keyframes fadeOut {
+  100% {
+    opacity: 0;
+  }
 
-	0% {
-		opacity:1; } 
+  0% {
+    opacity: 1;
+  }
 }
